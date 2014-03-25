@@ -1,12 +1,12 @@
 node-proxy
 =========
 
-node-proxy es una simple implementación de un proxy para hacer llamadar por JSONP a recursos que están fuera del dominio (evitar [Same-origin policy] [Same-origin]).
+node-proxy it's a simple implementation of a proxy who by JSONP can access to resources out of the domain. (avoid [Same-origin policy] [Same-origin]).
 
-##### Parámetros (GET URL Parameters)
-  - o: Deber ser "p" para utilizar el proxy.
-  - u: URL de donde se obtendrán los datos.
-  - callback: Nombre de la función de retorno de JSONP.
+##### Parameters (GET URL Parameters)
+  - o: Must be 'p' for use the proxy.
+  - u: URL of the resource.
+  - callback: Function name of the JSONP callback.
 
 
 Version
@@ -15,13 +15,31 @@ Version
 0.0.1
 
 
-Ejemplo
+Example
 --------------
 
-```sh
-http://midominio.com/?u=p&u=http://www.google.com.ar/&callback=onJSONP
+```
+http://mydomain.com/?u=p&u=http://www.google.com/&callback=onJSONP
 ```
 
+jQuery Example
+--------------
+
+```JavaScript
+$.ajax({
+	url: "http://nodeproxy.com/",
+  jsonp: "callback",
+  dataType: "jsonp",
+  data: {
+    o: "p",
+    u: "http://www.google.com/",
+    format: "json"
+  },
+  success: function (response) {
+    console.log(response);
+  }
+});
+```
 
 
 License

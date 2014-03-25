@@ -2,7 +2,7 @@ var http = require('http');
 var url = require('url');
 
 var ipaddr = process.env.IP || "127.0.0.1";
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 7070;
 
 http.createServer(function (req, res) {
   var query = url.parse(req.url, true).query;
