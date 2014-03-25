@@ -1,6 +1,6 @@
 node-proxy
 =========
----
+
 node-proxy es una simple implementación de un proxy para hacer llamadar por JSONP a recursos que están fuera del dominio (evitar [Same-origin policy] [Same-origin]).
 
 ##### Parámetros (GET URL Parameters)
